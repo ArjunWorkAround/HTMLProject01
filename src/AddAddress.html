@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Address</title>
+</head>
+<body>
+    <form>
+<h1>ADD A NEW ADDRESS</h1>
+<button onclick="getLocation()"> Use current location</button><br/><br/>
+<input type="text" placeholder="Name" />
+<input type="number" placeholder="Number" /><br/><br/>
+<input type="number" placeholder="Pin" size="5" />
+<input type="text" placeholder="Locality" /><br/><br/>
+<textarea rows="4" cols="50" ></textarea><br/><br/>
+<input type="radio" name="address" value="office" />
+<lable for="office">Office</lable>
+<input type="radio" name="address" value="home" />
+<lable for="home">Home</lable><br/><br/>
+<input type="button" value="submit" />
+
+<script>
+    var x = document.getElementById("demo");
+    
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude;
+    }
+    </script>
+    </form>
+</body>
+</html>
